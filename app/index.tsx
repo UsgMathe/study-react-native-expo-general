@@ -1,30 +1,45 @@
 import { Colors } from '@/constants/Colors';
+import { globalStyles } from '@/theme/styles';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, View } from 'react-native';
+import { Link } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <View style={globalStyles.centeredScreen}>
       <Ionicons name="logo-react" size={100} color={Colors.primary} />
-      <Text
-        style={{
-          color: Colors.text,
-          fontSize: 20,
-          marginTop: 10,
-          fontWeight: 'bold',
-        }}
+      <Text style={styles.title}>React Native Expo Study Project</Text>
+      <Text style={styles.text}>
+        A repository with general studies of React Native with Expo
+      </Text>
+
+      <Link
+        href="https://github.com/UsgMathe/study-reactnative-expo-general"
+        style={styles.link}
       >
-        React Native Expo Study Project
-      </Text>
-      <Text style={{ color: Colors.text }}>
-        This is a repository with general react native expo studies
-      </Text>
+        <View style={globalStyles.iconTextContainer}>
+          <Ionicons name="logo-github" size={15} color={Colors.text} />
+          <Text style={styles.text}>See the repository</Text>
+        </View>
+      </Link>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    color: Colors.text,
+    fontSize: 20,
+    marginVertical: 4,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  link: {
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.text,
+    paddingBottom: 4,
+    marginTop: 30,
+  },
+
+  text: { color: Colors.text, textAlign: 'center' },
+});
