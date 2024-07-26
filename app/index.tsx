@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Screen from '@/components/Screen';
 import { Colors } from '@/constants/Colors';
 import { globalStyles } from '@/theme/styles';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,9 +10,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Index() {
   const navigation = useNavigation();
   return (
-    <View style={globalStyles.centeredScreen}>
+    <Screen>
       <Ionicons name="logo-react" size={100} color={Colors.primary} />
-      <Text style={styles.title}>React Native Expo Study Project</Text>
+      <Text style={globalStyles.title}>React Native Expo Study Project</Text>
       <Text style={styles.text}>
         A repository with general studies of React Native with Expo
       </Text>
@@ -32,24 +33,16 @@ export default function Index() {
       >
         <Button.Text>See the exercises</Button.Text>
       </Button>
-    </View>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  title: {
-    color: Colors.text,
-    fontSize: 20,
-    marginVertical: 4,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   link: {
     borderBottomWidth: 1,
     borderBottomColor: Colors.text,
     paddingBottom: 4,
     marginTop: 30,
   },
-
   text: { color: Colors.text, textAlign: 'center' },
 });

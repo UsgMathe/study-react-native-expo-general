@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Screen from '@/components/Screen';
 import { Colors } from '@/constants/Colors';
 import { useCounter } from '@/hooks/useCounter';
 import { globalStyles } from '@/theme/styles';
@@ -32,7 +33,7 @@ export default function Counter() {
   }, [counter]);
 
   return (
-    <View style={globalStyles.centeredScreen}>
+    <Screen>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 30 }}>
         <Button onPress={() => decrementCounter()}>
           <Ionicons name="remove" size={30} color={Colors.text} />
@@ -48,6 +49,6 @@ export default function Counter() {
           </Button.Text>
         </Button>
       </View>
-    </View>
+    </Screen>
   );
 }
