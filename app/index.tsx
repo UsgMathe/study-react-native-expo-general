@@ -1,5 +1,7 @@
 import Button from '@/components/Button';
 import Screen from '@/components/Screen';
+import Subtitle from '@/components/Subtitle';
+import Title from '@/components/Title';
 import { Colors } from '@/constants/Colors';
 import { globalStyles } from '@/theme/styles';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,10 +14,10 @@ export default function Index() {
   return (
     <Screen>
       <Ionicons name="logo-react" size={100} color={Colors.primary} />
-      <Text style={globalStyles.title}>React Native Expo Study Project</Text>
-      <Text style={styles.text}>
+      <Title style={globalStyles.title}>React Native Expo Study Project</Title>
+      <Subtitle>
         A repository with general studies of React Native with Expo
-      </Text>
+      </Subtitle>
 
       <Link
         href="https://github.com/UsgMathe/study-reactnative-expo-general"
